@@ -27,9 +27,21 @@ function mintNFT (itemName,itemType,itemDescription,itemEffect) {
 // create a "loop" that will go through an "array" of NFT's
 // and print their metadata with console.log()
 function listNFTs() {
-    console.log("==== COLLECTION ====")
+    console.log("==== COLLECTION ====");
+    
     for(var i=0; i<NFT_COLLECTION_POTION.length;i++){
+        /*
+        console.log("Name : " + NFT_COLLECTION_POTION[i].name);
+        console.log("Type : " + NFT_COLLECTION_POTION[i].type);
+        console.log("Description : " + NFT_COLLECTION_POTION[i].desc);
+        console.log("Effect : " + NFT_COLLECTION_POTION[i].effect);
+        
+        var propNames = Object.keys(NFT_COLLECTION_POTION[i]);
+        for(var j=0;j<propNames.length;j++){
+            console.log(propNames[j] + " : " + NFT_COLLECTION_POTION[i][propNames[j]]);
+        }*/
         Object.keys(NFT_COLLECTION_POTION[i]).forEach((prop)=> console.log(prop + " : " + NFT_COLLECTION_POTION[i][prop]));
+        
     }
     console.log("==== End of List ====")
 }
@@ -40,8 +52,8 @@ function getTotalSupply() {
 }
 
 // call your functions below this line
-console.log("Minted:" + mintNFT("HP Potion",1,"Instantly Heal 50 HP.",50).name);
-console.log("Minted:" + mintNFT("Explosion Potion",1,"Damages for 1 instance.",-50).name);
-console.log("Minted:" + mintNFT("Slow Poison",0,"Damages for 1 instance.",-30).name);
+console.log("Minted: " + mintNFT("HP Potion",1,"Instantly Heal 50 HP.",50).name);
+console.log("Minted: " + mintNFT("Explosion Potion",1,"Damages for 1 instance.",-50).name);
+console.log("Minted: " + mintNFT("Slow Poison",0,"Damages for 1 instance.",-30).name);
 listNFTs();
 getTotalSupply();
